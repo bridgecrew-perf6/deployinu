@@ -8,73 +8,95 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form id="search">
-    <input type="text" name="search" id="search-box">
-    <select name="variations">
-      <option value="name">Name</option>
-      <option value="surname">Surname</option>
-      <option value="age">Age</option>
-      <option value="it-knowledge">IT-knowledge</option>
-      <option value="group">Group</option>
-      <option value="all">All</option>
-    </select>
-    <input type="submit" value="Search">
-  </form>
-  <form id="student-form">
-    <div>
-      <label for="student-name">Name:</label>
-      <input type="text" name="name" id="student-name" class="required" placeholder="Enter your name" value="">
+  <div id="main-wrap">
+      <form id="student-form">
+        <div class="">
+          <label for="student-name">Name:</label>
+          <input type="text" name="name" id="student-name" class="required" placeholder="Enter your name" value="">
+        </div>
+        <div>
+          <label for="student-surname">Surname:</label>
+          <input type="text" name="surname" id="student-surname" class="required" placeholder="Enter your surname" value="">
+        </div>
+        <div>
+          <label for="student-age">Age:</label>
+          <input type="number" name="age" id="student-age" placeholder="Enter your age" class="required">
+        </div>
+        <div>
+          <label for="student-phone">Phone:</label>
+          <input type="tel" name="phone" id="student-phone" placeholder="Enter your phone" value="+" class="required">
+        </div>
+        <div>
+          <label for="student-email">Email:</label>
+          <input type="email" name="email" id="student-email" class="required" placeholder="Enter your email" value="" >
+        </div>
+        <div>
+          <label for="student-it-knowledge">IT Knowledge:</label>
+          <!-- <input type="range" name="it-knowledge" id="student-it-knowledge" min="1" max="10" value="5" step="1" oninput="output.value=this.value">
+            <output name="output">5</output> -->
+            <output name="output" id="it-knowledge-output"></output>
+            <input type="range" name="it-knowledge" id="student-it-knowledge" min="1" max="10" value="" step="1">
+          </div>
+            <div class="group-radio-wrap">
+              <input type="radio" name="group" id="student-group-6" value="type 6">
+              <label for="student-group-6">TYPE 6gr.</label>
+              <input type="radio" name="group" id="student-group-5" value="type 5">
+              <label for="student-group-5">TYPE 5gr.</label>
+              <input type="radio" name="group" id="student-group-4" value="type 4" checked>
+              <label for="student-group-4">TYPE 4gr.</label>
+              <input type="radio" name="group" id="student-group-3" value="type 3">
+              <label for="student-group-3">TYPE 3gr.</label>
+              <input type="radio" name="group" id="student-group-2" value="type 2">
+              <label for="student-group-2">TYPE 2gr.</label>
+              <input type="radio" name="group" id="student-group-1" value="type 1" checked>
+              <label for="student-group-1">TYPE 1gr.</label>
+              <h3>Group name:</h3>
+            </div>
+            <div class="interests-wrap">
+              <legend>Interests:</legend>
+              <div class="interest-item">
+                <input type="checkbox" name="interest" id="interestCheck1" value="JavaScript">
+                <label for="interestCheck1">JavaScript</label>
+              </div>
+              <div class="interest-item">
+                <input type="checkbox" name="interest" id="interestCheck2" value="C++">
+                <label for="interestCheck2">C++</label>
+              </div>
+              <div class="interest-item">
+                <input type="checkbox" name="interest" id="interestCheck3" value="C#">
+                <label for="interestCheck3">C#</label>
+              </div>
+              <div class="interest-item">
+                <input type="checkbox" name="interest" id="interestCheck4" value="PHP">
+                <label for="interestCheck3">PHP</label>
+              </div>
+              <div class="interest-item">
+                <input type="checkbox" name="interest" id="interestCheck5" value="Java">
+                <label for="interestCheck5">Java</label>
+              </div>
+            </div>
+              <input type="submit">
+              <span id="alert"></span>
+              </form>
+
+    <div class="student-list-wrap">
+      <div class="search-wrap">
+        <form id="search">
+          <input type="text" name="search" id="search-box">
+          <select name="variations">
+            <option value="name">Name</option>
+            <option value="surname">Surname</option>
+            <option value="age">Age</option>
+            <option value="it-knowledge">IT-knowledge</option>
+            <option value="group">Group</option>
+            <option value="all">All</option>
+          </select>
+          <input type="submit" value="Search">
+        </form>
+      </div>
+      <div id="students-list"></div>
     </div>
-    <div>
-      <label for="student-surname">Surname:</label>
-      <input type="text" name="surname" id="student-surname" class="required" placeholder="Enter your surname" value="">
     </div>
-    <div>
-      <label for="student-age">Age:</label>
-      <input type="number" name="age" id="student-age" placeholder="Enter your age" class="required">
-    </div>
-    <div>
-      <label for="student-phone">Phone:</label>
-      <input type="tel" name="phone" id="student-phone" placeholder="Enter your phone" value="+" class="required">
-    </div>
-    <div>
-      <label for="student-email">Email:</label>
-      <input type="email" name="email" id="student-email" class="required" placeholder="Enter your email" value="" >
-    </div>
-    <div>
-      <label for="student-it-knowledge">IT Knowledge:</label>
-      <!-- <input type="range" name="it-knowledge" id="student-it-knowledge" min="1" max="10" value="5" step="1" oninput="output.value=this.value">
-      <output name="output">5</output> -->
-      <input type="range" name="it-knowledge" id="student-it-knowledge" min="1" max="10" value="" step="1">
-      <output name="output" id="it-knowledge-output"></output>
-    </div>
-    <div>
-      <h3>Group name:</h3>
-      <input type="radio" name="group" id="student-group-1" value="type 1" checked>
-      <label for="student-group-1">TYPE 1gr.</label>
-      <input type="radio" name="group" id="student-group-2" value="type 2">
-      <label for="student-group-2">TYPE 2gr.</label>
-      <input type="radio" name="group" id="student-group-3" value="type 3">
-      <label for="student-group-3">TYPE 3gr.</label>
-    </div>
-    <fieldset>
-      <legend>Interests:</legend>
-      <input type="checkbox" name="interest" id="interestCheck1" value="JavaScript">
-      <label for="interestCheck1">JavaScript</label>
-      <input type="checkbox" name="interest" id="interestCheck2" value="C++">
-      <label for="interestCheck2">C++</label>
-      <input type="checkbox" name="interest" id="interestCheck3" value="C#">
-      <label for="interestCheck3">C#</label>
-      <input type="checkbox" name="interest" id="interestCheck4" value="PHP">
-      <label for="interestCheck3">PHP</label>
-      <input type="checkbox" name="interest" id="interestCheck5" value="Java">
-      <label for="interestCheck5">Java</label>
-      
-    </fieldset>
-    <input type="submit">
-  </form>
-  <span id="alert"></span>
-  <div id="students-list"></div>
   <script src="script.js"></script>
 </body>
 </html>

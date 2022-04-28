@@ -1,3 +1,30 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body {
+    font-family: 'Ubuntu','Segoe UI', 'Open Sans', 'Helvetica Neue';
+    background-color: #3c415e;
+    color: #dfe2e2;
+}
+button{
+    font-family: 'Ubuntu', 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+input {
+    font-family: 'Ubuntu', 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+#main-wrap {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .input-error {
     border-color: red;
 }
@@ -6,4 +33,91 @@
 }
 .error-alert {
     color: red;
+}
+
+.group-radio-wrap {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    align-items: center;
+}
+.interests-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    align-items: center;
+}
+.interest-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    border: #738598 1px solid;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.group-radio-wrap h3 {
+    margin-top: 0px;
+}
+
+p{
+    color:  #dfe2e2;
+}
+label {
+    color:  #dfe2e2;
+}
+select {
+    width: 10%;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #dfe2e2;
+}
+
+
+#student-form input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+#student-form label{
+    text-decoration: underline;
+    color: #1cb3c8;
+
+}
+
+.search-wrap {
+    max-width: 500px;
+}
+
+
+.student-list-wrap{
+    grid-area: list;
+    display: flex;
+
+}
+/* #students-list {
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+} */
+
+.student-item {
+    background-color: #738598;
+    border-radius: 3%;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    width: 50%;
 }
